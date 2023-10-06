@@ -2,7 +2,8 @@ public class Main{
 
     public static void main(String []args){
 
-        //Task 1
-       System.out.println("Hello, World!");
+       //Task 2
+       String name = System.console().readLine();
+       System.out.println("Hello " + name);
     }
 }
