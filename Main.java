@@ -2,10 +2,10 @@ public class Main{
 
     public static void main(String []args){
 
-       //Task 8
-       int feet = Integer.parseInt(System.console().readLine("Enter number of feet: "));
+       //Task 9
+       int monthlyDeposit = Integer.parseInt(System.console().readLine("Enter deposit amount: £"));
 
-       System.out.println("The number of miles is " + feet/5280);
+       System.out.println("After a year you will have: £" + (monthlyDeposit*1.01));
 
 
        
