@@ -2,10 +2,15 @@ public class Main{
 
     public static void main(String []args){
 
-       //Task 9
-       int monthlyDeposit = Integer.parseInt(System.console().readLine("Enter deposit amount: £"));
+       //Task 1
+       int age = Integer.parseInt(System.console().readLine("Enter your age: "));
 
-       System.out.println("After a year you will have: £" + (monthlyDeposit*1.01));
+       int yearBorn = 2023 - age;
+       System.out.println("You were born in the year: " + yearBorn);
+       if (age >= 18) {
+        System.out.println("You are 18 or older");
+        
+       }
 
 
        
