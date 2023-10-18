@@ -5,8 +5,13 @@ public class Student {
     String name;
 
     //Task 2
-    public void student(int id, String name){
+    public Student(int id, String name){
         this.id = id;
         this.name = name;
+    }
+
+    //Task 3
+    public void printDetails(){
+        System.out.println("ID: " + this.id + "\nName: " + this.name);
     }
 }
