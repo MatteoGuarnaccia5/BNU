@@ -14,9 +14,10 @@ public class Student {
     
     public void printDetails(){
         System.out.println("ID: " + this.id + "\nName: " + this.name);
+        //Task 10
+        this.course.printDetails();
     }
 
-    //Task 9
     public void enroll(Course course){
         this.course = course;
     }
