@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Song{
 
     String title;
@@ -12,13 +10,4 @@ public class Song{
         this.numOfPlays = plays;
     }
 
-    public void deleteSong(){
-
-    }
-
-    
-
-    // public ArrayList<Song> filterByPlaysViewSongs(){
-
-    // }
 }

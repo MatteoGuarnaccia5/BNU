@@ -3,7 +3,7 @@ import java.util.List;
 
 public class handler {
     
-    public List<Song> Songs = new ArrayList<Song>();
+    public ArrayList<Song> songs = new ArrayList<Song>();
 
     public void addSong(){
         String title = System.console().readLine("Enter song title: ");
@@ -12,10 +12,17 @@ public class handler {
 
                     Song newSong = new Song(title, artist, plays);
 
-                    this.Songs.add(newSong);
+                    songs.add(newSong);
     }
 
     public void viewSongs(){
-        System.out.println(this.Songs);
+        
+        System.out.println("Title.  Artist Name.  Plays \n---------------------------------");
+        for (int i = 0; i < songs.size(); i++) {
+         System.out.println(songs.get(i).title + ". " + songs.get(i).artistName + ". " + songs.get(i).numOfPlays + ". ");
+        }
+
+        System.out.println("---------------------------------\n");
+
     }
 }
