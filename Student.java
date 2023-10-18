@@ -2,8 +2,7 @@ public class Student {
 
     
     int id;
-    String name;
-    //Task 8
+    String name;    
     Course course;
 
     
@@ -15,5 +14,10 @@ public class Student {
     
     public void printDetails(){
         System.out.println("ID: " + this.id + "\nName: " + this.name);
+    }
+
+    //Task 9
+    public void enroll(Course course){
+        this.course = course;
     }
 }
