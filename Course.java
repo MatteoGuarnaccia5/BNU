@@ -3,7 +3,6 @@ public class Course{
     String courseCode;
     String name;
 
-    //Task 7
     public Course(String code, String name){
         this.courseCode = code;
         this.name = name;

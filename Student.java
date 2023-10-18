@@ -3,6 +3,8 @@ public class Student {
     
     int id;
     String name;
+    //Task 8
+    Course course;
 
     
     public Student(int id, String name){
