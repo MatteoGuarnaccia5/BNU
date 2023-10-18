@@ -1,12 +1,20 @@
+import java.util.List;
+
 public class Main{
 
+    // public List<Song> Songs;
     public static void main(String[] args){
+
+        Main main = new Main();
         
-        menu();
+        main.menu();
         
     }
-    
-    public static void menu(){
+
+    public void menu(){
+
+        handler songHandler = new handler();
+
         boolean Continue = true;
         do {
             System.out.println("""
@@ -24,12 +32,14 @@ public class Main{
             switch (choice) {
                 case "1":
                     //add song
+                    songHandler.addSong();
                     break;
                 case "2":
                 //delete song
                     break;
                 case "3":
                     //view all
+                    songHandler.viewSongs();
                     break;
                 case "4":
                     //filter view by plays
