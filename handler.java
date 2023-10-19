@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class handler {
     
@@ -25,4 +24,33 @@ public class handler {
         System.out.println("---------------------------------\n");
 
     }
+
+    public void deleteSong(){
+
+        boolean songFound = false;
+        while (!songFound) {
+            String song = System.console().readLine("Enter the song name you would like to delete: ");
+        
+        for (int i = 0; i < songs.size(); i++) {
+
+            if(songs.get(i).title.equals(song)){
+                songs.remove(i);
+                songFound = true;
+                continue;
+            }
+            else{
+                songFound = false;
+            }
+        }
+
+        if(!songFound){
+            System.out.println("Song not found. Check entered name and try again.");
+        }
+        else{
+            continue;
+        }
+        }
+    }
+
+
 }

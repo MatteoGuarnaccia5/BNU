@@ -36,6 +36,7 @@ public class Main{
                     break;
                 case "2":
                 //delete song
+                songHandler.deleteSong();
                     break;
                 case "3":
                     //view all
@@ -43,6 +44,7 @@ public class Main{
                     break;
                 case "4":
                     //filter view by plays
+                    songHandler.viewByPlays();
                     break;
                 case "5":
                     Continue = false;
