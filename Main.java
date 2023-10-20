@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class Main{
 
     // public List<Song> Songs;
@@ -24,7 +22,8 @@ public class Main{
                     2. Remove song
                     3. View all songs
                     4. View songs with chosen number of plays
-                    5. Exit
+                    5. Sort by song title
+                    6. Exit
                     """);
             
             String choice = System.console().readLine("Enter number of option: ");
@@ -40,16 +39,20 @@ public class Main{
                     break;
                 case "3":
                     //view all
-                    songHandler.viewSongs();
+                    songHandler.viewSongs(songHandler.songs);
                     break;
                 case "4":
                     //filter view by plays
                     songHandler.viewByPlays();
                     break;
                 case "5":
+                    //sort by song title
+                    songHandler.viewSongs(songHandler.sortByTitle());
+                    break;
+                case "6":
                     Continue = false;
                     break;
-            
+                    
                 default:
                 System.out.println("Not valid. Please enter a choice (1 to 5)");
                     break;

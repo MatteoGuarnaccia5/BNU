@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class handler {
     
@@ -29,11 +31,11 @@ public class handler {
                     songs.add(newSong);
     }
 
-    public void viewSongs(){
+    public void viewSongs(ArrayList<Song> songList){
         
         System.out.println("Title.  Artist Name.  Plays \n---------------------------------");
-        for (int i = 0; i < songs.size(); i++) {
-         System.out.println(songs.get(i).title + ". " + songs.get(i).artistName + ". " + songs.get(i).numOfPlays + ". ");
+        for (int i = 0; i < songList.size(); i++) {
+         System.out.println(songList.get(i).title + ". " + songList.get(i).artistName + ". " + songList.get(i).numOfPlays + ". ");
         }
 
         System.out.println("---------------------------------\n");
@@ -79,11 +81,17 @@ public class handler {
             }
         }
 
-        System.out.println("Title.  Artist Name.  Plays \n---------------------------------");
-        for (int i = 0; i < filteredList.size(); i++) {
-         System.out.println(filteredList.get(i).title + ". " + filteredList.get(i).artistName + ". " + filteredList.get(i).numOfPlays + ". ");
-        }
+        this.viewSongs(filteredList);
+        
+    }
 
-        System.out.println("---------------------------------\n");
+    public ArrayList<Song> sortByTitle(){
+        Comparator<Song> titleComparator = (c1, c2) -> c1.title.compareTo(c2.title);
+
+
+        ArrayList<Song> sortedList = songs;
+        sortedList.sort(titleComparator);
+
+        return sortedList;
     }
 }
