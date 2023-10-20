@@ -4,6 +4,21 @@ public class handler {
     
     public ArrayList<Song> songs = new ArrayList<Song>();
 
+    public handler(){
+
+        this.songs.add(new Song("Wonderwall", "Oasis", 1781026463));
+        this.songs.add(new Song("Charlemagne", "Blossoms", 94195806));
+        this.songs.add(new Song("Ruby", "Kaiser Chiefs", 250455378));
+        this.songs.add(new Song("Back to black", "Amy Winehouse", 830329608));
+        this.songs.add(new Song("505", "Arctic Monkeys", 1331428041));
+        this.songs.add(new Song("Teenage Kicks", "The Undertones", 70763584));
+        this.songs.add(new Song("Believer", "Imagine dragons", 270512663));
+        this.songs.add(new Song("Lose Control", "Becky Hill", 872145533));
+        this.songs.add(new Song("Bohemian Rhapsody", "Queen", 227751129));
+        this.songs.add(new Song("Organic growth", "Sainte", 2657752));
+
+    }
+
     public void addSong(){
         String title = System.console().readLine("Enter song title: ");
                     String artist = System.console().readLine("Enter Artist name: ");
@@ -52,5 +67,23 @@ public class handler {
         }
     }
 
+    public void viewByPlays(){
+        
+        int numOfPlays = Integer.parseInt(System.console().readLine("Enter the number of plays you would like to filter by: "));
 
+        ArrayList<Song> filteredList = new ArrayList<Song>();
+        for (int i = 0; i < songs.size(); i++) {
+            
+            if (songs.get(i).numOfPlays >= numOfPlays) {
+                filteredList.add(songs.get(i));
+            }
+        }
+
+        System.out.println("Title.  Artist Name.  Plays \n---------------------------------");
+        for (int i = 0; i < filteredList.size(); i++) {
+         System.out.println(filteredList.get(i).title + ". " + filteredList.get(i).artistName + ". " + filteredList.get(i).numOfPlays + ". ");
+        }
+
+        System.out.println("---------------------------------\n");
+    }
 }
