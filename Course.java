@@ -23,7 +23,6 @@ public class Course{
         Student student = new Student(434324, "student");
         for (int i = 0; i < Modules.size(); i++) {
             System.out.println("The course name: " + Modules.get(i).name + "\nThe course code: " + Modules.get(i).code);
-            //Task 8
             System.out.println("Mark: " + Modules.get(i).markToGrade(student.marks.get(i)));
         }
     }
