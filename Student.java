@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+
 public class Student {
 
     
     int id;
     String name;    
     Course course;
+
+    //Task 4
+    ArrayList<Integer> marks = new ArrayList<Integer>();
 
     
     public Student(int id, String name){
