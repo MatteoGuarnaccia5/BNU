@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Student {
 
@@ -11,13 +12,16 @@ public class Student {
 
     
     public Student(int id, String name){
+
+        Random rand = new Random();
+
         this.id = id;
         this.name = name;
-
-        marks.add(23);
-        marks.add(34);
-        marks.add(86);
-        marks.add(69);
+        //Task 7
+        marks.add(rand.nextInt(101));
+        marks.add(rand.nextInt(101));
+        marks.add(rand.nextInt(101));
+        marks.add(rand.nextInt(101));
     }
 
     
