@@ -17,7 +17,7 @@ public class Student {
 
         this.id = id;
         this.name = name;
-        //Task 7
+        
         marks.add(rand.nextInt(101));
         marks.add(rand.nextInt(101));
         marks.add(rand.nextInt(101));
