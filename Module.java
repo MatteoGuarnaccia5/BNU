@@ -1,4 +1,3 @@
-//Task 1
 public class Module{
 
     String name;
