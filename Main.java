@@ -23,7 +23,8 @@ public class Main{
                     3. View all songs
                     4. View songs with chosen number of plays
                     5. Sort by song title
-                    6. Exit
+                    6. Sort by artist name
+                    7. Exit
                     """);
             
             String choice = System.console().readLine("Enter number of option: ");
@@ -49,10 +50,15 @@ public class Main{
                     //sort by song title
                     songHandler.viewSongs(songHandler.sortByTitle());
                     break;
+
                 case "6":
+                    //sort by song artist
+                    songHandler.viewSongs(songHandler.sortByArtist());
+                    break;
+                case "7":
                     Continue = false;
                     break;
-                    
+
                 default:
                 System.out.println("Not valid. Please enter a choice (1 to 5)");
                     break;

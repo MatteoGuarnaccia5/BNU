@@ -82,11 +82,21 @@ public class handler {
         }
 
         this.viewSongs(filteredList);
-        
+
     }
 
     public ArrayList<Song> sortByTitle(){
         Comparator<Song> titleComparator = (c1, c2) -> c1.title.compareTo(c2.title);
+
+
+        ArrayList<Song> sortedList = songs;
+        sortedList.sort(titleComparator);
+
+        return sortedList;
+    }
+
+    public ArrayList<Song> sortByArtist(){
+        Comparator<Song> titleComparator = (c1, c2) -> c1.artistName.compareTo(c2.artistName);
 
 
         ArrayList<Song> sortedList = songs;
