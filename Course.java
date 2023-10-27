@@ -19,9 +19,11 @@ public class Course{
 
     public void printDetails(){
     
-        //Task 3
+        //Task 6
+        Student student = new Student(434324, "student");
         for (int i = 0; i < Modules.size(); i++) {
             System.out.println("The course name: " + Modules.get(i).name + "\nThe course code: " + Modules.get(i).code);
+            System.out.println("Mark: " + student.marks.get(i));
         }
     }
 }
