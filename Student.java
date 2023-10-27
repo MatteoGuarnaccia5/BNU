@@ -7,13 +7,18 @@ public class Student {
     String name;    
     Course course;
 
-    //Task 4
     ArrayList<Integer> marks = new ArrayList<Integer>();
 
     
     public Student(int id, String name){
         this.id = id;
         this.name = name;
+        
+        //Task 5
+        marks.add(23);
+        marks.add(34);
+        marks.add(86);
+        marks.add(69);
     }
 
     
