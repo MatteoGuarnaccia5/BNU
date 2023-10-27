@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Student {
 
     
@@ -5,10 +8,20 @@ public class Student {
     String name;    
     Course course;
 
+    public ArrayList<Integer> marks = new ArrayList<Integer>();
+
     
     public Student(int id, String name){
+
+        Random rand = new Random();
+
         this.id = id;
         this.name = name;
+        
+        marks.add(rand.nextInt(101));
+        marks.add(rand.nextInt(101));
+        marks.add(rand.nextInt(101));
+        marks.add(rand.nextInt(101));
     }
 
     
