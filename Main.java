@@ -24,7 +24,8 @@ public class Main{
                     4. View songs with chosen number of plays
                     5. Sort by song title
                     6. Sort by artist name
-                    7. Exit
+                    7. Sort by number of plays
+                    8. Exit
                     """);
             
             String choice = System.console().readLine("Enter number of option: ");
@@ -35,8 +36,8 @@ public class Main{
                     songHandler.addSong();
                     break;
                 case "2":
-                //delete song
-                songHandler.deleteSong();
+                    //delete song
+                    songHandler.deleteSong();
                     break;
                 case "3":
                     //view all
@@ -56,11 +57,17 @@ public class Main{
                     songHandler.viewSongs(songHandler.sortByArtist());
                     break;
                 case "7":
+                    //sort by number of plays
+                    songHandler.viewSongs(songHandler.sortByPlays());
+                    break;
+                case "8":
+                    //Exit
                     Continue = false;
                     break;
 
                 default:
-                System.out.println("Not valid. Please enter a choice (1 to 5)");
+                    //handles any exceptions
+                    System.out.println("Not valid. Please enter a choice (1 to 8)");
                     break;
             }
         } while (Continue);

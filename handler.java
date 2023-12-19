@@ -1,6 +1,8 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class handler {
     
@@ -9,7 +11,7 @@ public class handler {
     public handler(){
 
         this.songs.add(new Song("Wonderwall", "Oasis", 1781026463));
-        this.songs.add(new Song("Charlemagne", "Blossoms", 94195806));
+        this.songs.add(new Song("Charlemagne", "Blossoms", 394195806));
         this.songs.add(new Song("Ruby", "Kaiser Chiefs", 250455378));
         this.songs.add(new Song("Back to black", "Amy Winehouse", 830329608));
         this.songs.add(new Song("505", "Arctic Monkeys", 1331428041));
@@ -22,9 +24,16 @@ public class handler {
     }
 
     public void addSong(){
+        int plays = 0;
         String title = System.console().readLine("Enter song title: ");
                     String artist = System.console().readLine("Enter Artist name: ");
-                    int plays = Integer.parseInt(System.console().readLine("Enter the number of plays: "));
+                    try{
+                         plays = Integer.parseInt(System.console().readLine("Enter the number of plays: "));
+                    }
+                    catch (Exception e){
+                        System.out.println("Error. Number of plays entered incorrectly. Redirecting back to main menu");
+                    }
+                   
 
                     Song newSong = new Song(title, artist, plays);
 
@@ -47,13 +56,12 @@ public class handler {
         boolean songFound = false;
         while (!songFound) {
             String song = System.console().readLine("Enter the song name you would like to delete: ");
-        
         for (int i = 0; i < songs.size(); i++) {
 
-            if(songs.get(i).title.equals(song)){
+            if(songs.get(i).title.toLowerCase().equals(song.toLowerCase())){
                 songs.remove(i);
                 songFound = true;
-                continue;
+                break;
             }
             else{
                 songFound = false;
@@ -67,6 +75,7 @@ public class handler {
             continue;
         }
         }
+        songFound = false;
     }
 
     public void viewByPlays(){
@@ -96,12 +105,23 @@ public class handler {
     }
 
     public ArrayList<Song> sortByArtist(){
-        Comparator<Song> titleComparator = (c1, c2) -> c1.artistName.compareTo(c2.artistName);
+        Comparator<Song> artistComparator = (c1, c2) -> c1.artistName.compareTo(c2.artistName);
 
 
         ArrayList<Song> sortedList = songs;
-        sortedList.sort(titleComparator);
+        sortedList.sort(artistComparator);
 
         return sortedList;
     }
+
+    public ArrayList<Song> sortByPlays(){
+        Comparator<Song> playsComparator = (c1, c2) -> Integer.compare(c1.numOfPlays, c2.numOfPlays);
+
+
+        ArrayList<Song> sortedList = songs;
+        sortedList.sort(playsComparator);
+
+        return sortedList;
+    }
+  
 }
