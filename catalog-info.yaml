@@ -4,7 +4,7 @@ metadata:
   name: BNU
   annotations:
     github.com/project-slug: MatteoGuarnaccia5/BNU
-    endoflife.date/products: angular@17,nginx@1.25
+    # endoflife.date/products: angular@17,nginx@1.25
 spec:
   type: other
   lifecycle: unknown
